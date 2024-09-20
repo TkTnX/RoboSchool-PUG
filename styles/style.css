@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css?family=Jost:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+body {
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6; /* 48px */
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.title-2 {
+  color: #141024;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+/* HEADER */
+
+.header {
+  padding: 30px 15px 0;
+  color: #fff;
+  background-color: #141024;
+}
+
+.header__wrapper {
+  max-width: 1720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1.6;
+}
+
+.header__logo {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.header__navbar {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.header__navbar-link {
+  font-size: 20px;
+  font-weight: 400;
+  transition: all 0.2s ease-in;
+}
+
+.header__navbar-link:hover {
+  opacity: 0.8;
+}
+
+.header__phone {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+/* HERO */
+
+.hero {
+  background-color: #141024;
+}
+
+.hero__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  line-height: 1.6; /* 112px */
+  gap: 28px;
+}
+
+.hero__text {
+  max-width: 516px;
+}
+
+.hero__img {
+  max-width: 783px;
+}
+
+.hero__title {
+  font-size: 70px;
+  font-weight: 600;
+}
+
+.hero__subtitle {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.hero__link {
+  display: block;
+  max-width: max-content;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 5px;
+  background: #d52027;
+  padding: 25px 54px;
+  margin-top: 50px;
+  transition: all 0.2s ease-in;
+}
+
+.hero__link:hover {
+  opacity: 0.8;
+}
+
+/* ABOUT */
+
+.about {
+  margin-top: 120px;
+}
+
+.about__text {
+  color: #141024;
+  font-size: 30px;
+  font-weight: 400;
+  max-width: 891px;
+}
+
+.about__list {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about__item-title {
+  color: #d52027;
+  font-size: 70px;
+  font-weight: 600;
+}
+
+.about__item-text {
+  color: rgba(20, 16, 36, 0.7);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* WILL GET */
+
+.willGet {
+  margin-top: 120px;
+  background: #F9F9F9;
+}
+
+.willGet__wrapper {
+    padding: 100px 0;
+}
+
+.willGet__list {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.willGet__item {
+  display: grid;
+  gap: 20px;
+}
+
+.willGet__item-title {
+  color: #141024;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.willGet__item-text {
+  color: rgba(20, 16, 36, 0.7);
+  font-size: 18px;
+  font-weight: 400;
+}

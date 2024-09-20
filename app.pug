@@ -1,0 +1,50 @@
+doctype html
+html(lang="ru")
+-const headerNavbarList = [{name: "О школе", link: "#about"}, {name: "Тренеры", link: "#coach"}, {name: "Стоимость", link: "#price"}]
+-const aboutList = [{number: "10", text: "УМК по различным направлениям по робототехнике"}, {number: "20", text: "Школ, в которых запущена робототехника"}, {number: "100", text: "Педагогов прошедших курсы повышения квалификации"}, {number: "10 000", text: "Обученных детей на базе собственных центров"}]
+-const willGetList = [{title: "Удостоверение", text: "Дающее право преподавать робототехнику для детей 6-12 лет в образовательных учреждениях"}, {title: "Знания", text: "По основам разработки учебно-методических комплексов по робототехнике и программированию"}, {title: "Практику", text: "Возможность пройти практику по преподаванию робототехники на базе R:ED LAB (в оффлайн или онлайн формате)"}]
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title ROBO SCHOOL
+        link(rel="stylesheet", href="/styles/reset.css")
+        link(rel="stylesheet", href="/styles/style.css")
+    body 
+        header.header 
+            .header__wrapper 
+                .header__logo 
+                    a(href="/") ROBO.SCHOOL 
+                ul.header__navbar 
+                    each item in headerNavbarList
+                        li 
+                            a.header__navbar-link(href=item.link)= item.name
+                p.header__phone +7 800 000 11 22
+        main 
+        <!-- HERO -->
+            section.hero 
+                .hero__wrapper 
+                    div.hero__text
+                        h1.hero__title ROBO SCHOOL
+                        p.hero__subtitle Курсы повышения квалификации по робототехнике для педагогов начальной школы
+                        a.hero__link(href="#!") Записаться на курс
+                    img.hero__img(src="/images/hero.png", alt="hero")
+        <!-- ABOUT -->
+            section.about#about 
+                .container.about__wrapper
+                    p.about__text  
+                        <b>Robo School</b> – учреждение для формирования кадрового педагогического резерва в сфере робототехники и программирования 
+                    ul.about__list 
+                        each item in aboutList
+                            li.about__item 
+                                h5.about__item-title= item.number
+                                p.about__item-text= item.text
+        <!-- WillGet -->
+            section.willGet 
+                .container.willGet__wrapper 
+                    h2.title-2.willGet__title Что вы получите после курса
+                    ul.willGet__list 
+                        each item in willGetList
+                            li.willGet__item 
+                                h6.willGet__item-title= item.title
+                                p.willGet__item-text= item.text
+        
