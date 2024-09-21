@@ -1,14 +1,31 @@
 doctype html
 html(lang="ru")
--const headerNavbarList = [{name: "О школе", link: "#about"}, {name: "Тренеры", link: "#coach"}, {name: "Стоимость", link: "#price"}]
--const aboutList = [{number: "10", text: "УМК по различным направлениям по робототехнике"}, {number: "20", text: "Школ, в которых запущена робототехника"}, {number: "100", text: "Педагогов прошедших курсы повышения квалификации"}, {number: "10 000", text: "Обученных детей на базе собственных центров"}]
--const willGetList = [{title: "Удостоверение", text: "Дающее право преподавать робототехнику для детей 6-12 лет в образовательных учреждениях"}, {title: "Знания", text: "По основам разработки учебно-методических комплексов по робототехнике и программированию"}, {title: "Практику", text: "Возможность пройти практику по преподаванию робототехники на базе R:ED LAB (в оффлайн или онлайн формате)"}]
+    -const headerNavbarList = [{name: "О школе", link: "#about"}, {name: "Тренеры", link: "#coach"}, {name: "Стоимость", link: "#price"}]
+    -const aboutList = [{number: "10", text: "УМК по различным направлениям по робототехнике"}, {number: "20", text: "Школ, в которых запущена робототехника"}, {number: "100", text: "Педагогов прошедших курсы повышения квалификации"}, {number: "10 000", text: "Обученных детей на базе собственных центров"}]
+    -const willGetList = [{title: "Удостоверение", text: "Дающее право преподавать робототехнику для детей 6-12 лет в образовательных учреждениях"}, {title: "Знания", text: "По основам разработки учебно-методических комплексов по робототехнике и программированию"}, {title: "Практику", text: "Возможность пройти практику по преподаванию робототехники на базе R:ED LAB (в оффлайн или онлайн формате)"}]
+    -const coachItemList = [{imageUrl: "/images/coach/01.jpg",name: "Ирина Лайм",desc: "преподаватель по робототехнике",},{imageUrl: "/images/coach/02.jpg",name: "Марина Орлова",desc: "преподаватель по робототехнике",},{imageUrl: "/images/coach/03.jpg",name: "Максим Петров",desc: "преподаватель по программированию",},{imageUrl: "/images/coach/04.jpg",name: "Константин Назаров",desc: "преподаватель по робототехнике",},{imageUrl: "/images/coach/05.jpg",name: "Лиза Весенняя",desc: "преподаватель по программированию",},]
+    mixin coachItem(coach)
+        .coach-item 
+            img.coach-item__img(src=coach.imageUrl, alt=coach.name)
+            div.coach-item__text 
+                h5.coach-item__title=coach.name
+                p.coach-item__desc=coach.desc
+                a(href="#!").coach-item__link Подробнее 
+    mixin priceItem(title, price, desc)
+        .price-item
+            h5.price-item__title= title
+            p.price-item__price= price 
+            p.price-item__desc= desc 
+            button.price-item__button Оставить заявку
+
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title ROBO SCHOOL
         link(rel="stylesheet", href="/styles/reset.css")
         link(rel="stylesheet", href="/styles/style.css")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css")
+
     body 
         header.header 
             .header__wrapper 
@@ -47,4 +64,52 @@ html(lang="ru")
                             li.willGet__item 
                                 h6.willGet__item-title= item.title
                                 p.willGet__item-text= item.text
-        
+        <!-- Coach -->
+            section.coach#coach 
+                .container-right.coach__wrapper
+                    h2.title-2.coach__title Профессиональные тренеры
+                    .swiper.coach__slider
+                        .swiper-wrapper 
+                            each item in coachItemList
+                                .swiper-slide 
+                                    +coachItem(item)
+                        div.container.coach__controls
+                            div.coach__slider-btns 
+                                .swiper-button-prev.coach__slider-prev 
+                                    img(src="/images/coach/left.svg", alt="PREV")
+                                .swiper-button-next.coach__slider-next 
+                                    img(src="/images/coach/right.svg", alt="right")
+
+                            .swiper-scrollbar 
+        <!-- Prices -->
+            section.prices#price 
+                .container.prices__wrapper 
+                    h2.title-2.prices__title Выберите нужный пакет
+                    div.prices__list 
+                        +priceItem("– PRO –", "20.000 ₽", "УМК по робототетхнике и программированию")
+                        +priceItem("– ROBO –", "15.000 ₽", "УМК по робототетхнике ")
+                        +priceItem("– PROG –", "10.000 ₽", "УМК по программированию")
+
+        <!-- Discount -->
+            section.discount 
+                .container.discount__wrapper 
+                    div 
+                        h3.discount__title Запишитесь на курс со скидкой 10%
+                        p.discount__subtitle Акция действительна до 10 марта 2022 года
+                    div 
+                        form.discount__form
+                            input.discount__input(type="text", placeholder="Имя")
+                            input.discount__input(type="text", placeholder="Телефон")
+                            input.discount__input(type="text", placeholder="E-mail")
+                            button.discount__button Оформить заявку
+
+        footer.footer 
+            .container.footer__wrapper 
+                .footer__left 
+                    h6.header__logo ROBO.SCHOOL
+                    p.footer__copyright © ROBO.SCHOOL
+                .footer__right 
+                    p.header__phone +7 800 000 11 22
+
+    script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
+    script(src="/js/script.js")
