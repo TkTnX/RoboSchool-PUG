@@ -36,6 +36,11 @@ html(lang="ru")
                         li 
                             a.header__navbar-link(href=item.link)= item.name
                 p.header__phone +7 800 000 11 22
+                div.header__btns-sm 
+                    button.header__phone-sm 
+                        img(src="/images/header/phone.svg", alt="phone")
+                    button.header-burger__btn#headerBurgerBtn 
+                        img(src="/images/header/burger.svg", alt="burger button")
         main 
         <!-- HERO -->
             section.hero 
@@ -109,7 +114,15 @@ html(lang="ru")
                     h6.header__logo ROBO.SCHOOL
                     p.footer__copyright © ROBO.SCHOOL
                 .footer__right 
-                    p.header__phone +7 800 000 11 22
+                    p.header__phone.footer__phone +7 800 000 11 22
+        <!-- MODALS -->
+        .burger#headerBurger
+            button.burger__close#headerBurgerClose
+                img(src="/images/header/close.svg", alt="close")
+            ul.burger__list
+                each item in headerNavbarList 
+                    li.burger__list-item
+                        a(href=item.link)=item.name 
 
     script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
     script(src="/js/script.js")
